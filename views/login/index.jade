@@ -1,0 +1,43 @@
+extends ../layout_nonavbar
+
+block none_bar
+        .container
+            .page-form    
+                form.form.form-login(action='/login',method='POST',id='login-form',style='background:white')
+                    .header-content(style='background:white')
+                        .image_logo
+                            img(src='/images/osis1.png',style='width:160px')
+                    .body-content(style='padding:25px')
+                        input#token(type="hidden")
+                        p.p-login Oficina de informatica y sistemas de informacion
+                        .form-group
+                            .input-icon.right
+                              i.fa.fa-user
+                              input#dniLogin.form-control(type='text', placeholder='DNI', name='dni')
+                        .form-group
+                            .input-icon.right
+                              i.fa.fa-key
+                              input.form-control(type='password', placeholder='Contraseña', name='password')
+                        .form-group.pull-right
+                            button.btnLogin.btn.btn-lg.btn-success.btn-block(type='submit')
+                                | Iniciar  
+                                i.fa.fa-chevron-circle-right
+                        .clearfix
+        
+        //-
+          section#content
+            form(action='/login',method='POST',id='login-form',style='background:white')
+
+              h1 LOGIN
+              div
+                input#username(type='text', placeholder='DNI', name='dni', required='')
+              div
+                input#password(type='password', placeholder='Contraseña', name='password', required='')
+              div
+                input(type='submit', value='Ingresar')
+            // form
+            .button
+              .image_logo
+                  img(src='/images/osis1.png',style='width:66px')
+
+                

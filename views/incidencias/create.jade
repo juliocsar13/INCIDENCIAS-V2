@@ -1,0 +1,93 @@
+.modal.fade#registerIncidenciaModal(role="dialog")
+    .modal-dialog.modal-wide-width
+        .modal-content
+            .modal-header
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Registrar incidencia
+            .modal-body
+        
+                form(method='post',action='/incidencias')
+                    .row(style='padding:15px')
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() Cliente
+                                .input-group
+                                    select.select2-costumer-incide.form-control(name='costumer')
+                                        each costumer in costumers
+                                            option(value=costumer.name+' '+costumer.lastname) #{costumer.name} #{costumer.lastname} (#{costumer.dni})
+                                    span.input-group-btn
+                                        button#btnCreateCostumer.btn.btn-success(type='button',href='#registerCostumerModal',data-toggle='modal')
+                                            i.fa.fa-plus
+                                                
+                        .col-md-6
+                            .form-group
+                                label.control-label() Dependencias
+                                .input-group
+                                    select.select2-dependence-incide.form-control(name='dependence')
+                                        each dependence in dependences
+                                            option(value=dependence.siglas) #{dependence.nameDependence} (#{dependence.siglas})
+                                    span.input-group-btn
+                                        button.btn.btn-success(type='button',href='#registerDependenceIncidenciaModal',data-toggle='modal')
+                                            i.fa.fa-plus
+                        .col-md-6
+                            .form-group
+                                label.control-label() Titulo
+                                input.form-control(name='title')
+                        
+                        .col-md-6
+                            .form-group
+                                label.control-label() Prioridad
+                                input.form-control(type='number', min='1' , max ='5' ,name='priority')
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() Medio de notificacion
+                                select.form-control(name='notificacionMeans')
+                                    option(value='telefono') Telefono
+                                    option(value='documento') Documento
+                                    option(value='faccebok') Faccebok
+                                    option(value='whatsapp') WhatsApp
+                                    
+                        .col-md-6 
+                            .form-group
+                                label.control-label() Tecnico
+                                select.select2-tecnico-incide.form-control(name='technical')
+                                    each tecnico in staffs
+                                        if tecnico.role == 'tecnico'
+                                            option(value=tecnico.name +' '+ tecnico.lastname) #{tecnico.dependence} (#{tecnico.name}  #{tecnico.lastname})
+                        
+                                                
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Estado
+                                select.form-control(name='state')
+                                    option(value="pendiente") Pendiente    
+                                    option(value="proceso")  Proceso     
+                                    option(value="atendido") Atendido
+                                    
+                        .col-md-3
+                            .form-group
+                                label.control-label() Fecha de registro
+                                input#datePerson.form-control(name='registration_date', readonly="readonly")
+                        .col-md-3 
+                            .form-group
+                                label.control-label() Registrador
+                                input#usuario_r.form-control(name='userRegister', readonly="readonly")
+                        
+                        .col-md-6
+                            .form-group
+                                label.control-label() Descripcion
+                                textarea.form-control(rows='2',name='description')
+                        .col-md-6  
+                            .form-group
+                                label.control-label() Comentario/Tecnico
+                                textarea.form-control(rows='2',name='comment')
+                                  
+                        .col-md-12
+                            button.btn.btn-success.pull-right(type='submit',style='margin-left:5px') Registrar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar
+        //-
+            .modal-footer
+                button.btn.btn-default(type='button',data-dismiss='modal') Cancelar
+                button.btn.btn-success(type='submit') Registrar

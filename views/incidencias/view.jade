@@ -1,0 +1,56 @@
+.modal.fade#viewIncidenciaModal(role="dialog")
+    .modal-dialog.modal-lg
+        .modal-content
+            .modal-header
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Ver detalle Incidencia
+            .modal-body
+                form(style='padding:10px')
+                    .row
+                    #page-user-profile.row
+                        .col-md-12
+                            .row
+                                .col-md-12
+                                    table.table.table-striped.table-hover
+                                        tbody
+                                            tr
+                                                td.pull-right Titulo:
+                                                td#viewTitleIncidencia 
+                                                td.pull-right Dependencia:
+                                                td#viewDependenceIncidencia 
+                                            tr    
+                                                
+                                                td.pull-right Prioridad:
+                                                td#viewPriorityIncidencia 
+                                                td.pull-right Medio:
+                                                td#viewNotificationMeansIncidencia 
+                                            tr    
+                                                td.pull-right Cliente:
+                                                td#viewCostumerIncidencia
+                                                td.pull-right Tecnico:
+                                                td#viewTecnicoIncidencia
+                                                
+                                            tr    
+                                                td.pull-right Estado:
+                                                td#viewStateIncidencia
+                                                td.pull-right Registrador:
+                                                td#viewRegisterIncidencia
+                                            tr
+                                                td.pull-right Fecha:
+                                                td#viewDateIncidencia 
+                                                td.pull-right Descripcion:
+                                                td#viewDescriptionIncidencia 
+                                            tr 
+                                                
+                                .col-md-12
+                                    table.table.table-striped.table-hover
+                                        tbody
+                                            tr
+                                                td.pull-right Comentario:
+                                                td#viewCommentIncidencia         
+                                                
+                                    
+                                     
+                        .col-md-12    
+                            hr   
+                            button#submitConfirmState.btn.btn-success.pull-right(type='button',style='margin-left:5px',data-dismiss='modal') Aceptar

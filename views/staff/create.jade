@@ -1,0 +1,73 @@
+.modal.fade#registerStaffModal(role="dialog")
+    .modal-dialog.modal-wide-width
+        .modal-content
+            .modal-header
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Registrar Usuario
+            .modal-body
+                form.form-validate(method='post',action='/usuarios')
+                    .row(style='padding:15px')
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() DNI
+                                input.form-control.required(type='text',name='dni',maxlength="8")
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Rol
+                                select#select_costumer.form-control(type='text',name='role')
+                                    option(value='admin') Administrador
+                                    option(value='usuario') Usuario
+                                    option(value='tecnico') Tecnico        
+                        
+                        .col-md-6
+                            .form-group
+                                label.control-label() Nombre
+                                input.form-control.required(type='text',name='name')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Apellido
+                                input.form-control.required(type='text',name='lastname')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Dependencia
+                                select.select2-dependence-staff.form-control(type='text',name='dependence')
+                                    each dependence in dependences
+                                        option(value=dependence.siglas) #{dependence.nameDependence} (#{dependence.siglas})
+                        .col-md-6
+                            .form-group
+                                label.control-label() Email
+                                input.form-control.required.email(type='text',name='email')
+                        
+                        
+                        .col-md-6
+                                .form-group
+                                    label.control-label() Contraseña
+                                    input.form-control.required.password(type='password',name='password')
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Telefono
+                                input.form-control.required.number(type='text',name='phone')
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Estado
+                                select.form-control(type='text',name='flat')
+                                    option(value='habilitado') Habilitado
+                                    option(value='inhabilitado') Inhabilitado
+
+                        .col-md-3
+                            .form-group
+                                label.control-label() Registrador 
+                                input#recorderStaff.form-control(name='recorder', readonly="readonly")
+                
+                        .col-md-3
+                            .form-group
+                                label.control-label() Fecha registro
+                                .input-icon.right
+                                    i.fa.fa-calendar
+                                    input#dateStaff.form-control(name='register_date_staff', readonly="readonly") 
+                        .col-md-12
+                            button.btn.btn-success.pull-right(type='submit',style='margin-left:5px') Registrar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar
+        
+      

@@ -1,0 +1,87 @@
+/*body{
+  background: #DCDDDF;
+	background-repeat: no-repeat;
+	background-size: 100vw 100vh;
+	color: #000;
+	font: 14px Arial;
+	margin: 0 auto;
+	padding-top: 100px;
+	position: relative;
+  font-weight: lighter;
+}*/
+
+#menu-toggle:disabled {
+    background: #dddddd;
+}
+.image_login{
+
+    background:cadetblue;
+}
+.image_logo{
+    text-align: center;
+}
+.p-login{
+    text-align: center;
+    padding:10px;
+}
+.form-login{
+    box-shadow: -4px 7px 37px -2px rgba(0, 0, 0, 0.75);
+}
+
+.incide-state{
+    background: #dddddd;
+}
+/*#indidenciaState.on:after {
+  content: "Hide";
+  background-color: inherit;
+}
+*/
+.style-content{
+    padding: 10px 10px 50px 10px;
+}
+.btn-content-pendiente:before{
+    content: "pendiente";
+}
+.btn-content-proceso:after{
+    content: "proceso";
+}
+.btn-content-atendido:after{
+    content:"atendido";
+}
+
+.not-active {
+   pointer-events: none;
+   cursor: default;
+}
+
+.modal-wide-width{
+    width: 70%;
+}
+
+.modal-lg{
+    width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+    .modal-wide-width {
+      width: 100% !important
+    }
+    .modal-lg{
+        width: 100% !important
+    }
+}
+
+
+
+.btn-content-inhabilited:before{
+    content:"Inhabilitado";
+}
+.btn-content-habilited:after{
+    content:"Habilitado";
+}
+.size-incide{
+    font-size: 12px;
+}
+.table-responsive{
+    overflow-x: inherit !important
+}

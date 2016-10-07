@@ -1,0 +1,54 @@
+.modal.fade#registerCostumerModal(role="dialog")
+    .modal-dialog.modal-wide-width
+        .modal-content
+            .modal-header
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Registrar Cliente
+            .modal-body
+                form.form-validate(action='/clientes',method='POST')
+                    .row(style='padding:15px')
+
+                        .col-md-6
+                            .form-group
+                            
+                                label.control-label() DNI
+                                input.required.number.form-control(type='text',name='dni',maxlength="8")
+                                
+                        .col-md-6
+                            .form-group
+                                label.control-label() Rol
+                                select.form-control(type='text',name='role')
+                                    option(value='cliente') Cliente
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() Nombre
+                                input.required.form-control(type='text',name='name')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Apellido
+                                input.required.form-control(type='text',name='lastname')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Email
+                                input.required.email.form-control(type='text',name='email')
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() Telefono
+                                input.required.number.form-control(type='text',name='phone')
+                             
+                        .col-md-6
+                            .form-group
+                                label.control-label() Registrador
+                                input#recorderUser.form-control(name='recorder', readonly="readonly")
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() Fecha registro
+                                .input-icon.right
+                                    i.fa.fa-calendar
+                                    input#dateIncidencia.form-control(name='register_date_person', readonly="readonly")
+                        .col-md-12
+                            button.btn.btn-success.pull-right(style='margin-left:5px') Registrar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar

@@ -1,0 +1,1381 @@
+doctype html
+html(lang='en')
+  // Mirrored from swlabs.co/madmin/code/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Feb 2016 03:38:25 GMT
+  head
+    title Form Validation | Forms
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='cache-control', content='no-cache')
+    meta(http-equiv='expires', content='Thu, 19 Nov 1900 08:52:00 GMT')
+    link(rel='shortcut icon', href='images/icons/favicon.html')
+    link(rel='apple-touch-icon', href='images/icons/favicon-2.html')
+    link(rel='apple-touch-icon', sizes='72x72', href='images/icons/favicon-72x72.html')
+    link(rel='apple-touch-icon', sizes='114x114', href='images/icons/favicon-114x114.html')
+    // Loading bootstrap css
+    link(type='text/css', rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700')
+    link(type='text/css', rel='stylesheet', href='http://fonts.googleapis.com/css?family=Oswald:400,700,300')
+    link(type='text/css', rel='stylesheet', href='vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')
+    link(type='text/css', rel='stylesheet', href='vendors/font-awesome/css/font-awesome.min.css')
+    link(type='text/css', rel='stylesheet', href='vendors/bootstrap/css/bootstrap.min.css')
+    // LOADING STYLESHEET FOR PAGE
+    // Loading style vendors
+    link(type='text/css', rel='stylesheet', href='vendors/animate.css/animate.css')
+    link(type='text/css', rel='stylesheet', href='vendors/jquery-pace/pace.css')
+    link(type='text/css', rel='stylesheet', href='vendors/iCheck/skins/all.css')
+    link(type='text/css', rel='stylesheet', href='vendors/jquery-notific8/jquery.notific8.min.css')
+    link(type='text/css', rel='stylesheet', href='vendors/bootstrap-daterangepicker/daterangepicker-bs3.css')
+    // Loading style
+    link.default-style(type='text/css', rel='stylesheet', href='css/themes/style1/orange-blue.css')
+    link#theme-change.style-change.color-change(type='text/css', rel='stylesheet', href='css/themes/style1/orange-blue.css')
+    link(type='text/css', rel='stylesheet', href='css/style-responsive.css')
+  body.
+    div
+      .news-ticker.bg-orange
+        .container
+          ul#news-ticker-content.list-unstyled.mbn
+            li
+              a(href='http://madmin.swlabs.co/', ,='', target='_blank')
+                | This is HTML app version of this template. To see Angular app version, please click here
+          a#news-ticker-close(href='javascript:;')
+            i.fa.fa-times
+      // BEGIN BACK TO TOP
+      a#totop(href='#')
+        i.fa.fa-angle-up
+      // END BACK TO TOP
+      // BEGIN TOPBAR
+      #header-topbar-option-demo.page-header-topbar
+        nav#topbar.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0; z-index: 2;')
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.sidebar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a#logo.navbar-brand(href='index-2.html')
+              span.fa.fa-rocket
+              span.logo-text µAdmin
+              span.logo-text-icon(style='display: none') µ
+          .topbar-main
+            a#menu-toggle.hidden-xs(href='#')
+              i.fa.fa-bars
+            ul.nav.navbar-nav
+              li.active
+                a(href='index-2.html') Dashboard
+              li
+                a.dropdown-toggle(href='javascript:;', data-toggle='dropdown')
+                  | Layouts
+                  i.fa.fa-angle-down
+                ul.dropdown-menu
+                  li
+                    a(href='layout-left-sidebar.html') Left Sidebar
+                  li
+                    a(href='layout-right-sidebar.html') Right Sidebar
+                  li
+                    a(href='layout-left-sidebar-collapsed.html') Left Sidebar Collasped
+                  li
+                    a(href='layout-right-sidebar-collapsed.html') Right Sidebar Collasped
+                  li.dropdown-submenu
+                    a.dropdown-toggle(href='javascript:;', data-toggle='dropdown') More Options
+                    ul.dropdown-menu
+                      li
+                        a(href='#') Second level link
+                      li.dropdown-submenu
+                        a.dropdown-toggle(href='javascript:;', data-toggle='dropdown') More Options
+                        ul.dropdown-menu
+                          li
+                            a(href='#') Third level link
+                          li
+                            a(href='#') Third level link
+                          li
+                            a(href='#') Third level link
+                          li
+                            a(href='#') Third level link
+                          li
+                            a(href='#') Third level link
+                      li
+                        a(href='#') Second level link
+              li.mega-menu-dropdown
+                a.dropdown-toggle(href='javascript:;', data-toggle='dropdown')
+                  | UI Elements
+                  i.fa.fa-angle-down
+                ul.dropdown-menu
+                  li
+                    .mega-menu-content
+                      .row
+                        ul.col-md-4.mega-menu-submenu
+                          li
+                            h3 Neque porro quisquam
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Lorem ipsum dolor sit amet
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Consectetur adipisicing elit
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Sed ut perspiciatis unde omnis
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | At vero eos et accusamus et iusto
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Nam libero tempore cum soluta
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Et harum quidem rerum facilis est
+                        ul.col-md-4.mega-menu-submenu
+                          li
+                            h3 Neque porro quisquam
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Lorem ipsum dolor sit amet
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Consectetur adipisicing elit
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Sed ut perspiciatis unde omnis
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | At vero eos et accusamus et iusto
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Nam libero tempore cum soluta
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Et harum quidem rerum facilis est
+                        ul.col-md-4.mega-menu-submenu
+                          li
+                            h3 Neque porro quisquam
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Lorem ipsum dolor sit amet
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Consectetur adipisicing elit
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Sed ut perspiciatis unde omnis
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | At vero eos et accusamus et iusto
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Nam libero tempore cum soluta
+                          li
+                            a(href='#')
+                              i.fa.fa-angle-right
+                              | Et harum quidem rerum facilis est
+              li.mega-menu-dropdown.mega-menu-full
+                a.dropdown-toggle(href='javascript:;', data-toggle='dropdown')
+                  | Extras
+                  i.fa.fa-angle-down
+                ul.dropdown-menu
+                  li
+                    .mega-menu-content
+                      .row
+                        .col-md-7
+                          ul.col-md-4.mega-menu-submenu
+                            li
+                              h3 Neque porro quisquam
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Lorem ipsum dolor sit amet
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Consectetur adipisicing elit
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Sed ut perspiciatis unde omnis
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | At vero eos et accusamus et iusto
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Nam libero tempore cum soluta
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Et harum quidem rerum facilis est
+                          ul.col-md-4.mega-menu-submenu
+                            li
+                              h3 Neque porro quisquam
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Lorem ipsum dolor sit amet
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Consectetur adipisicing elit
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Sed ut perspiciatis unde omnis
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | At vero eos et accusamus et iusto
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Nam libero tempore cum soluta
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Et harum quidem rerum facilis est
+                          ul.col-md-4.mega-menu-submenu
+                            li
+                              h3 Neque porro quisquam
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Lorem ipsum dolor sit amet
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Consectetur adipisicing elit
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Sed ut perspiciatis unde omnis
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | At vero eos et accusamus et iusto
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Nam libero tempore cum soluta
+                            li
+                              a(href='#')
+                                i.fa.fa-angle-right
+                                | Et harum quidem rerum facilis est
+                        .col-md-5.document-demo
+                          ul.col-md-4.mega-menu-submenu
+                            li
+                              a(href='#')
+                                i.fa.fa-info-circle
+                                span Introduction
+                            li
+                              a(href='#')
+                                i.fa.fa-download
+                                span Installation
+                          ul.col-md-4.mega-menu-submenu
+                            li
+                              a(href='#')
+                                i.fa.fa-cog
+                                span T3 Settings
+                            li
+                              a(href='#')
+                                i.fa.fa-desktop
+                                span Layout System
+                          ul.col-md-4.mega-menu-submenu
+                            li
+                              a(href='#')
+                                i.fa.fa-magic
+                                span Customization
+                            li
+                              a(href='#')
+                                i.fa.fa-question-circle
+                                span FAQs
+            form#topbar-search.hidden-xs(action='#', method='GET')
+              .input-group
+                input.form-control(type='text', placeholder='Search...')
+                span.input-group-btn
+                  a.btn.submit(href='javascript:;')
+                    i.fa.fa-search
+            ul.nav.navbar.navbar-top-links.navbar-right.mbn
+              li.dropdown
+                a.dropdown-toggle(data-hover='dropdown', href='#')
+                  i.fa.fa-bell.fa-fw
+                  span.badge.badge-green 3
+                ul.dropdown-menu.dropdown-alerts
+                  li
+                    p You have 14 new notifications
+                  li
+                    .dropdown-slimscroll
+                      ul
+                        li
+                          a(href='extra-user-list.html', target='_blank')
+                            span.label.label-blue
+                              i.fa.fa-comment
+                            | New Comment
+                            span.pull-right.text-muted.small 4 mins ago
+                        li
+                          a(href='extra-user-list.html', target='_blank')
+                            span.label.label-violet
+                              i.fa.fa-twitter
+                            | 3 New Followers
+                            span.pull-right.text-muted.small 12 mins ago
+                        li
+                          a(href='extra-user-list.html', target='_blank')
+                            span.label.label-pink
+                              i.fa.fa-envelope
+                            | Message Sent
+                            span.pull-right.text-muted.small 15 mins ago
+                        li
+                          a(href='extra-user-list.html', target='_blank')
+                            span.label.label-green
+                              i.fa.fa-tasks
+                            | New Task
+                            span.pull-right.text-muted.small 18 mins ago
+                        li
+                          a(href='extra-user-list.html', target='_blank')
+                            span.label.label-yellow
+                              i.fa.fa-upload
+                            | Server Rebooted
+                            span.pull-right.text-muted.small 19 mins ago
+                        li
+                          a(href='extra-user-list.html', target='_blank')
+                            span.label.label-green
+                              i.fa.fa-tasks
+                            | New Task
+                            span.pull-right.text-muted.small 2 days ago
+                        li
+                          a(href='extra-user-list.html', target='_blank')
+                            span.label.label-pink
+                              i.fa.fa-envelope
+                            | Message Sent
+                            span.pull-right.text-muted.small 5 days ago
+                  li.last
+                    a.text-right(href='extra-user-list.html') See all alerts
+              li.dropdown
+                a.dropdown-toggle(data-hover='dropdown', href='#')
+                  i.fa.fa-envelope.fa-fw
+                  span.badge.badge-orange 7
+                ul.dropdown-menu.dropdown-messages
+                  li
+                    p You have 14 new messages
+                  li
+                    .dropdown-slimscroll
+                      ul
+                        li
+                          a(href='email-view-mail.html', target='_blank')
+                            span.avatar
+                              img.img-responsive.img-circle(src='../../../s3.amazonaws.com/uifaces/faces/twitter/kolage/48.jpg', alt='')
+                            span.info
+                              span.name Jessica Spencer
+                              span.desc Lorem ipsum dolor sit amet...
+                        li
+                          a(href='email-view-mail.html', target='_blank')
+                            span.avatar
+                              img.img-responsive.img-circle(src='../../../s3.amazonaws.com/uifaces/faces/twitter/kolage/48.jpg', alt='')
+                            span.info
+                              span.name
+                                | John Smith
+                                span.label.label-blue.pull-right New
+                              span.desc Lorem ipsum dolor sit amet...
+                        li
+                          a(href='email-view-mail.html', target='_blank')
+                            span.avatar
+                              img.img-responsive.img-circle(src='../../../s3.amazonaws.com/uifaces/faces/twitter/kolage/48.jpg', alt='')
+                            span.info
+                              span.name
+                                | John Doe
+                                span.label.label-orange.pull-right 10 min
+                              span.desc Lorem ipsum dolor sit amet...
+                        li
+                          a(href='email-view-mail.html', target='_blank')
+                            span.avatar
+                              img.img-responsive.img-circle(src='../../../s3.amazonaws.com/uifaces/faces/twitter/kolage/48.jpg', alt='')
+                            span.info
+                              span.name John Smith
+                              span.desc Lorem ipsum dolor sit amet...
+                        li
+                          a(href='email-view-mail.html', target='_blank')
+                            span.avatar
+                              img.img-responsive.img-circle(src='../../../s3.amazonaws.com/uifaces/faces/twitter/kolage/48.jpg', alt='')
+                            span.info
+                              span.name John Smith
+                              span.desc Lorem ipsum dolor sit amet...
+                  li.last
+                    a(href='email-view-mail.html', target='_blank') Read all messages
+              li.dropdown
+                a.dropdown-toggle(data-hover='dropdown', href='#')
+                  i.fa.fa-tasks.fa-fw
+                  span.badge.badge-yellow 8
+                ul.dropdown-menu.dropdown-tasks
+                  li
+                    p You have 14 pending tasks
+                  li
+                    .dropdown-slimscroll
+                      ul
+                        li
+                          a(href='page-blog-item.html', target='_blank')
+                            span.task-item
+                              | Fix the HTML code
+                              small.pull-right.text-muted 40%
+                            .progress.progress-sm
+                              .progress-bar.progress-bar-orange(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%;')
+                                span.sr-only 40% Complete (success)
+                        li
+                          a(href='page-blog-item.html', target='_blank')
+                            span.task-item
+                              | Make a wordpress theme
+                              small.pull-right.text-muted 60%
+                            .progress.progress-sm
+                              .progress-bar.progress-bar-blue(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 60%;')
+                                span.sr-only 60% Complete (success)
+                        li
+                          a(href='page-blog-item.html', target='_blank')
+                            span.task-item
+                              | Convert PSD to HTML
+                              small.pull-right.text-muted 55%
+                            .progress.progress-sm
+                              .progress-bar.progress-bar-green(role='progressbar', aria-valuenow='55', aria-valuemin='0', aria-valuemax='100', style='width: 55%;')
+                                span.sr-only 55% Complete (success)
+                        li
+                          a(href='page-blog-item.html', target='_blank')
+                            span.task-item
+                              | Convert HTML to Wordpress
+                              small.pull-right.text-muted 78%
+                            .progress.progress-sm
+                              .progress-bar.progress-bar-yellow(role='progressbar', aria-valuenow='78', aria-valuemin='0', aria-valuemax='100', style='width: 78%;')
+                                span.sr-only 78% Complete (success)
+                  li.last
+                    a(href='page-blog-item.html', target='_blank') See all tasks
+              li.dropdown.topbar-user
+                a.dropdown-toggle(data-hover='dropdown', href='#')
+                  img.img-responsive.img-circle(src='../../../s3.amazonaws.com/uifaces/faces/twitter/kolage/48.jpg', alt='')
+                  span.hidden-xs John Doe
+                  span.caret
+                ul.dropdown-menu.dropdown-user.pull-right
+                  li
+                    a(href='extra-profile.html')
+                      i.fa.fa-user
+                      | My Profile
+                  li
+                    a(href='page-calendar.html')
+                      i.fa.fa-calendar
+                      | My Calendar
+                  li
+                    a(href='email-inbox.html')
+                      i.fa.fa-envelope
+                      | My Inbox
+                      span.badge.badge-danger 3
+                  li
+                    a(href='#')
+                      i.fa.fa-tasks
+                      | My Tasks
+                      span.badge.badge-success 7
+                  li.divider
+                  li
+                    a(href='extra-lock-screen.html')
+                      i.fa.fa-lock
+                      | Lock Screen
+                  li
+                    a(href='extra-signin.html')
+                      i.fa.fa-key
+                      | Log Out
+              li#topbar-chat.hidden-xs
+                a.btn-chat(href='javascript:void(0)')
+                  i.fa.fa-comments
+                  span.badge.badge-info 3
+              li.dropdown.hidden-xs
+                // BEGIN THEME SETTING
+                a#theme-setting.dropdown-toggle(href='javascript:;', data-hover='dropdown', data-step='1', data-intro='<b>Header</b>, <b>sidebar</b>, <b>border style</b> and <b>color</b>, all of them can change for you to create the best', data-position='left')
+                  i.fa.fa-cogs
+                ul.dropdown-menu.dropdown-theme-setting.pull-right
+                  li
+                    h4.mtn Theme Styles
+                    select#list-style.form-control
+                      option(value='style1') Flat Squared style
+                      option(value='style2') Flat Rounded style
+                      option(value='style3') Flat Border style
+                  li
+                    h4.mtn Menu Styles
+                    select#list-menu.form-control
+                      option(value='sidebar-default') Menu style 1
+                      option(value='sidebar-colors') Menu style 2
+                      option(value='sidebar-icons') Menu style 3
+                      option(value='sidebar-collapsed') Menu style 4
+                  li
+                    h4.mtn Header & Sidebar
+                    select#list-header.form-control
+                      option(value='header-static') Static
+                      option(value='header-fixed') Fixed
+                  li
+                    h4.mtn Theme Colors
+                    ul#list-color.list-unstyled.list-inline
+                      li.green-dark(data-color='green-dark', data-hover='tooltip', title='Green - Dark')
+                      li.red-dark(data-color='red-dark', data-hover='tooltip', title='Red - Dark')
+                      li.pink-dark(data-color='pink-dark', data-hover='tooltip', title='Pink - Dark')
+                      li.blue-dark(data-color='blue-dark', data-hover='tooltip', title='Blue - Dark')
+                      li.yellow-dark(data-color='yellow-dark', data-hover='tooltip', title='Yellow - Dark')
+                      li.green-grey(data-color='green-grey', data-hover='tooltip', title='Green - Grey')
+                      li.red-grey(data-color='red-grey', data-hover='tooltip', title='Red - Grey')
+                      li.pink-grey(data-color='pink-grey', data-hover='tooltip', title='Pink - Grey')
+                      li.blue-grey(data-color='blue-grey', data-hover='tooltip', title='Blue - Grey')
+                      li.yellow-grey(data-color='yellow-grey', data-hover='tooltip', title='Yellow - Grey')
+                      li.yellow-green(data-color='yellow-green', data-hover='tooltip', title='Yellow - Green')
+                      li.orange-grey(data-color='orange-grey', data-hover='tooltip', title='Orange - Grey')
+                      li.pink-blue(data-color='pink-blue', data-hover='tooltip', title='Pink - Blue')
+                      li.pink-violet.active(data-color='pink-violet', data-hover='tooltip', title='Pink - Violet')
+                      li.orange-violet(data-color='orange-violet', data-hover='tooltip', title='Orange - Violet')
+                      li.pink-green(data-color='pink-green', data-hover='tooltip', title='Pink - Green')
+                      li.pink-brown(data-color='pink-brown', data-hover='tooltip', title='Pink - Brown')
+                      li.orange-blue(data-color='orange-blue', data-hover='tooltip', title='Orange - Blue')
+                      li.yellow-blue(data-color='yellow-blue', data-hover='tooltip', title='Yellow - Blue')
+                      li.green-blue(data-color='green-blue', data-hover='tooltip', title='Green - Blue')
+                // END THEME SETTING
+        // BEGIN MODAL CONFIG PORTLET
+        #modal-config.modal.fade
+          .modal-dialog
+            .modal-content
+              .modal-header
+                button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                h4.modal-title Modal title
+              .modal-body
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend et nisl eget porta. Curabitur elementum sem molestie nisl varius, eget tempus odio molestie. Nunc vehicula sem arcu, eu pulvinar neque cursus ac. Aliquam ultricies lobortis magna et aliquam. Vestibulum egestas eu urna sed ultricies. Nullam pulvinar dolor vitae quam dictum condimentum. Integer a sodales elit, eu pulvinar leo. Nunc nec aliquam nisi, a mollis neque. Ut vel felis quis tellus hendrerit placerat. Vivamus vel nisl non magna feugiat dignissim sed ut nibh. Nulla elementum, est a pretium hendrerit, arcu risus luctus augue, mattis aliquet orci ligula eget massa. Sed ut ultricies felis.
+              .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Close
+                button.btn.btn-primary(type='button') Save changes
+        // END MODAL CONFIG PORTLET
+      // END TOPBAR
+      #wrapper
+        // BEGIN SIDEBAR MENU
+        nav#sidebar.navbar-default.navbar-static-side(role='navigation')
+          .sidebar-collapse.menu-scroll
+            ul#side-menu.nav
+              li.user-panel
+                .thumb
+                  img.img-circle(src='../../../s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg', alt='')
+                .info
+                  p John Doe
+                  ul.list-inline.list-unstyled
+                    li
+                      a(href='extra-profile.html', data-hover='tooltip', title='Profile')
+                        i.fa.fa-user
+                    li
+                      a(href='email-inbox.html', data-hover='tooltip', title='Mail')
+                        i.fa.fa-envelope
+                    li
+                      a(href='#', data-hover='tooltip', title='Setting', data-toggle='modal', data-target='#modal-config')
+                        i.fa.fa-cog
+                    li
+                      a(href='extra-signin.html', data-hover='tooltip', title='Logout')
+                        i.fa.fa-sign-out
+                .clearfix
+              li
+                a(href='index-2.html')
+                  i.fa.fa-tachometer.fa-fw
+                    .icon-bg.bg-orange
+                  span.menu-title Dashboard
+              li
+                a(href='http://madmin.swlabs.co/', target='_blank')
+                  i.fa.fa-bullhorn.fa-fw
+                    .icon-bg.bg-orange
+                  span.menu-title Angular JS Version
+                  span.label.label-violet v4.0
+              li
+                a(href='#')
+                  i.fa.fa-laptop.fa-fw
+                    .icon-bg.bg-pink
+                  span.menu-title Frontend
+                  span.fa.arrow
+                  span.label.label-yellow v3.0
+                ul.nav.nav-second-level
+                  li
+                    a(href='frontend-one-page.html')
+                      i.fa.fa-rocket
+                      span.submenu-title One Page
+              li
+                a(href='#')
+                  i.fa.fa-desktop.fa-fw
+                    .icon-bg.bg-pink
+                  span.menu-title Layouts
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='layout-left-sidebar.html')
+                      i.fa.fa-align-left
+                      span.submenu-title Left Sidebar
+                  li
+                    a(href='layout-left-sidebar-collapsed.html')
+                      i.fa.fa-angle-double-left
+                      span.submenu-title Left Sidebar Collapsed
+                  li
+                    a(href='layout-right-sidebar.html')
+                      i.fa.fa-align-right
+                      span.submenu-title Right Sidebar
+                  li
+                    a(href='layout-right-sidebar-collapsed.html')
+                      i.fa.fa-angle-double-right
+                      span.submenu-title Right Sidebar Collapsed
+                  li
+                    a(href='layout-horizontal-menu.html')
+                      i.fa.fa-header
+                      span.submenu-title Horizontal Menu
+                  li
+                    a(href='layout-horizontal-menu-sidebar.html')
+                      i.fa.fa-h-square
+                      span.submenu-title Horizontal Menu & Sidebar
+                  li
+                    a(href='layout-fixed-topbar.html')
+                      i.fa.fa-magnet
+                      span.submenu-title Fixed Topbar
+                  li
+                    a(href='layout-boxed.html')
+                      i.fa.fa-columns
+                      span.submenu-title Boxed Layout
+                  li
+                    a(href='layout-hidden-footer.html')
+                      i.fa.fa-eye-slash
+                      span.submenu-title Hidden Footer
+                  li
+                    a(href='layout-header-topbar.html')
+                      i.fa.fa-paperclip
+                      span.submenu-title Header & Topbar
+                  li
+                    a(href='layout-title-breadcrumb.html')
+                      i.fa.fa-link
+                      span.submenu-title Title & Breadcrumb
+              li
+                a(href='#')
+                  i.fa.fa-send-o.fa-fw
+                    .icon-bg.bg-green
+                  span.menu-title UI Elements
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='ui-generals.html')
+                      i.fa.fa-briefcase
+                      span.submenu-title Generals
+                  li
+                    a(href='ui-portlets.html')
+                      i.fa.fa-instagram
+                      span.submenu-title Portlets
+                  li
+                    a(href='ui-buttons.html')
+                      i.fa.fa-hand-o-up
+                      span.submenu-title Buttons
+                  li
+                    a(href='ui-tabs.html')
+                      i.fa.fa-trello
+                      span.submenu-title Tabs
+                  li
+                    a(href='ui-progressbars.html')
+                      i.fa.fa-ellipsis-h
+                      span.submenu-title Progress Bars
+                  li
+                    a(href='ui-typography.html')
+                      i.fa.fa-font
+                      span.submenu-title Typography
+                  li
+                    a(href='ui-modals.html')
+                      i.fa.fa-list-alt
+                      span.submenu-title Modals
+                  li
+                    a(href='ui-sliders.html')
+                      i.fa.fa-arrows-h
+                      span.submenu-title Sliders
+                  li
+                    a(href='ui-icons.html')
+                      i.fa.fa-tint
+                      span.submenu-title Icons
+                  li
+                    a(href='ui-checkbox-radio.html')
+                      i.fa.fa-dot-circle-o
+                      span.submenu-title Checkbox & Radio
+                  li
+                    a(href='ui-panels.html')
+                      i.fa.fa-th-large
+                      span.submenu-title Panels
+              li
+                a(href='#')
+                  i.fa.fa-rocket.fa-fw
+                    .icon-bg.bg-green
+                  span.menu-title UI Advanced
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='ui-preloader.html')
+                      i.fa.fa-spinner
+                      span.submenu-title Preloader
+                      span.label.label-yellow v4.1
+                  li
+                    a(href='ui-editors.html')
+                      i.fa.fa-edit
+                      span.submenu-title Editors
+                  li
+                    a(href='ui-nestable-list.html')
+                      i.fa.fa-list-ol
+                      span.submenu-title Nestable List
+                  li
+                    a(href='ui-dropdown-select.html')
+                      i.fa.fa-level-down
+                      span.submenu-title Dropdown Select
+                      span.label.label-yellow v2.1
+                  li
+                    a(href='ui-notific8-notifications.html')
+                      i.fa.fa-exclamation-circle
+                      span.submenu-title Notific8 & Message
+                      span.label.label-blue v2.1
+                  li
+                    a(href='ui-toastr-notifications.html')
+                      i.fa.fa-exclamation-triangle
+                      span.submenu-title Toastr Notifications
+                  li
+                    a(href='ui-treeview.html')
+                      i.fa.fa-tasks
+                      span.submenu-title Tree View
+              li.active
+                a(href='#')
+                  i.fa.fa-edit.fa-fw
+                    .icon-bg.bg-violet
+                  span.menu-title Forms
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='form-layouts.html')
+                      i.fa.fa-columns
+                      span.submenu-title Form Layouts
+                  li
+                    a(href='form-basic.html')
+                      i.fa.fa-file-text-o
+                      span.submenu-title Form Basics
+                  li
+                    a(href='form-components.html')
+                      i.fa.fa-cube
+                      span.submenu-title Form Components
+                  li
+                    a(href='form-xeditable.html')
+                      i.fa.fa-edit
+                      span.submenu-title Form X-editable
+                  li
+                    a(href='form-wizard.html')
+                      i.fa.fa-magic
+                      span.submenu-title Form Wizard
+                  li.active
+                    a(href='form-validation.html')
+                      i.fa.fa-exclamation
+                      span.submenu-title Form Validation
+                  li
+                    a(href='form-multiple-file-upload.html')
+                      i.fa.fa-upload
+                      span.submenu-title Multiple File Upload
+                  li
+                    a(href='form-dropzone-file-upload.html')
+                      i.fa.fa-cloud-upload
+                      span.submenu-title Dropzone File Upload
+              li
+                a(href='#')
+                  i.fa.fa-th-list.fa-fw
+                    .icon-bg.bg-blue
+                  span.menu-title Tables
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='table-basic.html')
+                      i.fa.fa-th-large
+                      span.submenu-title Basic Tables
+                  li
+                    a(href='table-responsive.html')
+                      i.fa.fa-tablet
+                      span.submenu-title Responsive Tables
+                  li
+                    a(href='table-action.html')
+                      i.fa.fa-tencent-weibo
+                      span.submenu-title Action Tables
+                  li
+                    a(href='table-filter.html')
+                      i.fa.fa-filter
+                      span.submenu-title Filter Tables
+                  li
+                    a(href='table-advanced.html')
+                      i.fa.fa-indent
+                      span.submenu-title Advanced Tables
+                  li
+                    a(href='table-export.html')
+                      i.fa.fa-paperclip
+                      span.submenu-title Table Export
+                      span.label.label-yellow v2.1
+                  li
+                  li
+                    a(href='table-editable.html')
+                      i.fa.fa-edit
+                      span.submenu-title Jeditable
+                      span.label.label-blue v2.0        
+                  li
+                    a(href='table-datatables.html')
+                      i.fa.fa-list-alt
+                      span.submenu-title DataTables
+                      span.label.label-pink v2.0
+                  li
+                    a(href='table-sample.html')
+                      i.fa.fa-table
+                      span.submenu-title Sample Tables
+              li
+                a(href='#')
+                  i.fa.fa-database.fa-fw
+                    .icon-bg.bg-red
+                  span.menu-title Data Grids
+                  span.fa.arrow
+                  span.label.label-yellow Hot
+                ul.nav.nav-second-level
+                  li
+                    a(href='#')
+                      i.fa.fa-th-large
+                      span.submenu-title Layout Examples
+                      span.fa.arrow
+                    ul.nav.nav-third-level
+                      li
+                        a(href='grid-layout-div.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title DIVs Layout
+                      li
+                        a(href='grid-layout-table-1.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Table Demo 1
+                      li
+                        a(href='grid-layout-table-2.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Table Demo 2
+                      li
+                        a(href='grid-layout-2-table.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title 2 Tables on the Page
+                      li
+                        a(href='grid-layout-ul-li.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title UL LI
+                  li
+                    a(href='#')
+                      i.fa.fa-tencent-weibo
+                      span.submenu-title Actions Examples
+                      span.fa.arrow
+                    ul.nav.nav-third-level
+                      li
+                        a(href='grid-filter-with-ul-li.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Filters With UL/LI
+                      li
+                        a(href='grid-filter-with-select.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Filters With SELECT
+                      li
+                        a(href='grid-double-sort.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Double Sort
+                      li
+                        a(href='grid-deep-linking.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Deep Linking
+                      li
+                        a(href='grid-pagination-only.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Pagination Only
+                      li
+                        a(href='grid-without-item-per-page.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Without "Items per Page"
+                      li
+                        a(href='grid-hidden-sort.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Hidden Sort
+                  li
+                    a(href='#')
+                      i.fa.fa-table
+                      span.submenu-title jPList with jQuery UI
+                      span.fa.arrow
+                    ul.nav.nav-third-level
+                      li
+                        a(href='grid-range-slider.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Range Slider
+                      li
+                        a(href='grid-datepicker.html')
+                          i.fa.fa-angle-right
+                          span.submenu-title Date Picker Filter
+              li
+                a(href='#')
+                  i.fa.fa-file-o.fa-fw
+                    .icon-bg.bg-yellow
+                  span.menu-title Pages
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='page-gallery.html')
+                      i.fa.fa-suitcase
+                      span.submenu-title Gallery
+                  li
+                    a(href='page-timeline.html')
+                      i.fa.fa-steam
+                      span.submenu-title Timeline
+                  li
+                    a(href='page-blog.html')
+                      i.fa.fa-puzzle-piece
+                      span.submenu-title Blog
+                  li
+                    a(href='page-blog-item.html')
+                      i.fa.fa-chain
+                      span.submenu-title Blog Item
+                  li
+                    a(href='page-about.html')
+                      i.fa.fa-group
+                      span.submenu-title About Us
+                  li
+                    a(href='page-contact.html')
+                      i.fa.fa-send-o
+                      span.submenu-title Contact Us
+                  li
+                    a(href='page-calendar.html')
+                      i.fa.fa-calendar
+                      span.submenu-title Full Calendar
+              li
+                a(href='#')
+                  i.fa.fa-gift.fa-fw
+                    .icon-bg.bg-grey
+                  span.menu-title Extras
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='extra-profile.html')
+                      i.fa.fa-user
+                      span.submenu-title User Profile
+                  li
+                    a(href='extra-signin.html')
+                      i.fa.fa-sign-in
+                      span.submenu-title Sign In
+                  li
+                    a(href='extra-signup.html')
+                      i.fa.fa-sign-out
+                      span.submenu-title Sign Up
+                  li
+                    a(href='extra-lock-screen.html')
+                      i.fa.fa-lock
+                      span.submenu-title Lock Screen
+                  li
+                    a(href='extra-user-list.html')
+                      i.fa.fa-user
+                      span.submenu-title User List
+                      span.label.label-yellow v2.1
+                  li
+                    a(href='extra-invoice.html')
+                      i.fa.fa-print
+                      span.submenu-title Invoice
+                  li
+                    a(href='extra-faq.html')
+                      i.fa.fa-graduation-cap
+                      span.submenu-title FAQ
+                  li
+                    a(href='extra-pricing-table.html')
+                      i.fa.fa-money
+                      span.submenu-title Pricing Tables
+                  li
+                    a(href='extra-blank.html')
+                      i.fa.fa-file-o
+                      span.submenu-title Blank
+                  li
+                    a(href='extra-404.html')
+                      i.fa.fa-exclamation-circle
+                      span.submenu-title 404 Page
+                  li
+                    a(href='extra-500.html')
+                      i.fa.fa-exclamation-circle
+                      span.submenu-title 500 Page
+                  li
+                    a.btn-fullscreen(href='javascript:void(0)', title='FullScreen')
+                      i.fa.fa-arrows
+                      span.submenu-title Full Screen
+              li
+                a(href='#')
+                  i.fa.fa-sitemap.fa-fw
+                    .icon-bg.bg-dark
+                  span.menu-title Multi-Level Dropdown
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right
+                      span.submenu-title Second Level Item
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right
+                      span.submenu-title Second Level Item
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right
+                      span.submenu-title Third Level
+                      span.fa.arrow
+                    ul.nav.nav-third-level
+                      li
+                        a(href='#')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Third Level Item
+                      li
+                        a(href='#')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Third Level Item
+                      li
+                        a(href='#')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title  Third Level Item
+                      li
+                        a(href='#')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Third Level Item
+              li
+                a(href='#')
+                  i.fa.fa-envelope-o
+                    .icon-bg.bg-primary
+                  span.menu-title Email
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='email-inbox.html')
+                      i.fa.fa-inbox
+                      span.submenu-title Inbox
+                  li
+                    a(href='email-compose-mail.html')
+                      i.fa.fa-pencil
+                      span.submenu-title Compose Mail
+                  li
+                    a(href='email-view-mail.html')
+                      i.fa.fa-eye
+                      span.submenu-title View Mail
+              li
+                a(href='#')
+                  i.fa.fa-bar-chart-o.fa-fw
+                    .icon-bg.bg-orange
+                  span.menu-title Charts
+                  span.fa.arrow
+                ul.nav.nav-second-level
+                  li
+                    a(href='charts-flotchart.html')
+                      i.fa.fa-angle-right
+                      span.submenu-title Flot Charts
+                  li
+                    a(href='charts-chartjs.html')
+                      i.fa.fa-angle-right
+                      span.submenu-title Chartjs
+                  li
+                    a(href='#')
+                      i.fa.fa-angle-right
+                      span.submenu-title HighCharts
+                      span.fa.arrow
+                    ul.nav.nav-third-level
+                      li
+                        a(href='charts-highchart-line.html')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Line Charts
+                      li
+                        a(href='charts-highchart-area.html')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Area Charts
+                      li
+                        a(href='charts-highchart-column-bar.html')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Column & Bar Charts
+                      li
+                        a(href='charts-highchart-pie.html')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Pie Charts
+                      li
+                        a(href='charts-highchart-scatter-bubble.html')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Scatter & Bubble Charts
+                      li
+                        a(href='charts-highchart-dynamic.html')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Dynamic Charts
+                      li
+                        a(href='charts-highchart-combinations.html')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title Combinations
+                      li
+                        a(href='charts-highchart-more.html')
+                          i.fa.fa-angle-double-right
+                          span.submenu-title More Chart Types
+              li
+                a(href='animations.html')
+                  i.fa.fa-slack.fa-fw
+                    .icon-bg.bg-green
+                  span.menu-title Animations
+              // li.charts-sum<div id="ajax-loaded-data-sidebar"></div>
+        // END SIDEBAR MENU
+        // BEGIN CHAT FORM
+        #chat-form.fixed
+          .chat-inner
+            h2.chat-header
+              a.chat-form-close.pull-right(href='javascript:;')
+                i.glyphicon.glyphicon-remove
+              i.fa.fa-user
+              | Chat
+              span.badge.badge-info 3
+            #group-1.chat-group
+              strong Favorites
+              a(href='#')
+                span.user-status.is-online
+                small Verna Morton
+                span.badge.badge-info 2
+              a(href='#')
+                span.user-status.is-online
+                small Delores Blake
+                span.badge.badge-info.is-hidden 0
+              a(href='#')
+                span.user-status.is-busy
+                small Nathaniel Morris
+                span.badge.badge-info.is-hidden 0
+              a(href='#')
+                span.user-status.is-idle
+                small Boyd Bridges
+                span.badge.badge-info.is-hidden 0
+              a(href='#')
+                span.user-status.is-offline
+                small Meredith Houston
+                span.badge.badge-info.is-hidden 0
+            #group-2.chat-group
+              strong Office
+              a(href='#')
+                span.user-status.is-busy
+                small Ann Scott
+                span.badge.badge-info.is-hidden 0
+              a(href='#')
+                span.user-status.is-offline
+                small Sherman Stokes
+                span.badge.badge-info.is-hidden 0
+              a(href='#')
+                span.user-status.is-offline
+                small Florence Pierce
+                span.badge.badge-info 1
+            #group-3.chat-group
+              strong Friends
+              a(href='#')
+                span.user-status.is-online
+                small Willard Mckenzie
+                span.badge.badge-info.is-hidden 0
+              a(href='#')
+                span.user-status.is-busy
+                small Jenny Frazier
+                span.badge.badge-info.is-hidden 0
+              a(href='#')
+                span.user-status.is-offline
+                small Chris Stewart
+                span.badge.badge-info.is-hidden 0
+              a(href='#')
+                span.user-status.is-offline
+                small Olivia Green
+                span.badge.badge-info.is-hidden 0
+          #chat-box(style='top:400px')
+            .chat-box-header
+              a.chat-box-close.pull-right(href='#')
+                i.glyphicon.glyphicon-remove
+              span.user-status.is-online
+              span.display-name Willard Mckenzie
+              small Online
+            .chat-content
+              ul.chat-box-body
+                li
+                  p
+                    img.avt(src='../../../s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg')
+                    span.user John Doe
+                    span.time 09:33
+                  p Hi Swlabs, we have some comments for you.
+                li.odd
+                  p
+                    img.avt(src='../../../s3.amazonaws.com/uifaces/faces/twitter/alagoon/48.jpg')
+                    span.user Swlabs
+                    span.time 09:33
+                  p Hi, we're listening you...
+            .chat-textarea
+              input.form-control(placeholder='Type your message')
+        // END CHAT FORM
+        // BEGIN PAGE WRAPPER
+        #page-wrapper
+          // BEGIN TITLE & BREADCRUMB PAGE
+          #title-breadcrumb-option-demo.page-title-breadcrumb
+            .page-header.pull-left
+              .page-title Form Validation
+            ol.breadcrumb.page-breadcrumb
+              li
+                i.fa.fa-home
+                a(href='index-2.html') Home
+                i.fa.fa-angle-right
+              li
+                a(href='#') Forms
+                i.fa.fa-angle-right
+              li.active Form Validation
+            .btn.btn-blue.reportrange.hide
+              i.fa.fa-calendar
+              span
+              |  report 
+              i.fa.fa-angle-down
+              input(type='hidden', name='datestart')
+              input(type='hidden', name='endstart')
+            .clearfix
+          // END TITLE & BREADCRUMB PAGE
+          // BEGIN CONTENT
+          .page-content
+            .row
+              .col-lg-6
+                .portlet.box.portlet-yellow
+                  .portlet-header
+                    .caption Validate Types
+                    .tools
+                      i.fa.fa-chevron-up
+                      i.fa.fa-cog(data-toggle='modal', data-target='#modal-config')
+                      i.fa.fa-refresh
+                      i.fa.fa-times
+                  .portlet-body
+                    form.form-validate(action='#')
+                      .form-group
+                        label.control-label(for='') Text
+                        input.form-control.required(type='text', name='text')
+                      .form-group
+                        textarea.form-control.required(rows='10', name='textarea')
+                      .form-group
+                        label.control-label(for='') Email
+                        input.form-control.required.email(type='email', name='email')
+                      .form-group
+                        label.control-label(for='') Password
+                        input#password.form-control.required.password(type='password', name='password')
+                      .form-group
+                        label.control-label(for='') Confirm Password
+                        input.form-control.required.password(type='password', name='confirm_password', equalto='#password')
+                      .form-group
+                        label.control-label(for='') Min length 5
+                        input.form-control.required(type='text', name='min_length', minlength='5')
+                      .form-group
+                        label.control-label(for='') Max length 10
+                        input.form-control.required(type='text', name='max_length', maxlength='10')
+                      .form-group
+                        label.control-label(for='') Length from 3 to 10
+                        input.form-control.required(type='text', name='length_from_to', minlength='3', maxlength='10')
+                      .form-group
+                        label.control-label(for='') Url
+                        input.form-control.required.url(type='text', name='url')
+                      .form-group
+                        label.control-label(for='') Number
+                        input.form-control.required.number(type='text', name='number')
+                      .form-group
+                        label.control-label(for='dd1') Hello
+                        select#dd1.form-control.required(name='dd1')
+                          option(value='') nothing
+                          option(value='1') 1
+                          option(value='1') 1
+                          option(value='1') 1
+                      button.btn.btn-success(type='submit') Submit
+                      button.btn.btn-default(type='button') Cancel
+              .col-lg-6
+                .portlet.box.portlet-green
+                  .portlet-header
+                    .caption Sign In Form
+                    .tools
+                      i.fa.fa-chevron-up
+                      i.fa.fa-cog(data-toggle='modal', data-target='#modal-config')
+                      i.fa.fa-refresh
+                      i.fa.fa-times
+                  .portlet-body
+                    form.form-validate-signin(action='#')
+                      .form-group
+                        label.control-label(for='') Email
+                        input.form-control.required.email(type='email', name='email')
+                      .form-group
+                        label.control-label(for='') Password
+                        input#password.form-control.required.password(type='password', name='password')
+                      button.btn.btn-success(type='submit') Submit
+                      button.btn.btn-default(type='button') Cancel
+                .portlet.box.portlet-blue
+                  .portlet-header
+                    .caption Sign Up Form
+                    .tools
+                      i.fa.fa-chevron-up
+                      i.fa.fa-cog(data-toggle='modal', data-target='#modal-config')
+                      i.fa.fa-refresh
+                      i.fa.fa-times
+                  .portlet-body
+                    form.form-validate-signup(action='#')
+                      .form-group
+                        label.control-label(for='')
+                          | User Name 
+                          span.require *
+                        input.form-control.required(type='text', name='username1', minlength='2', maxlength='30', placeholder='Min length 2, Max length 30')
+                      .form-group
+                        label.control-label(for='')
+                          | Email 
+                          span.require *
+                        input.form-control.required.email(type='email', name='email1')
+                      .form-group
+                        label.control-label(for='')
+                          | Password 
+                          span.require *
+                        input#password1.form-control.required.password(type='password', name='password1', minlength='6', placeholder='Min length 6')
+                      .form-group
+                        label.control-label(for='') Age
+                        input.form-control.number(type='text', name='age', placeholder='Min value 0, max value 100')
+                      button.btn.btn-success.btn-block(type='submit') Sign Up
+          // END CONTENT
+        // BEGIN FOOTER
+        #footer
+          .copyright 2014 © μAdmin - Responsive Multi-Style Admin Template
+        // END FOOTER
+        // END PAGE WRAPPER
+    script(src='js/jquery-1.10.2.min.js')
+    script(src='js/jquery-migrate-1.2.1.min.js')
+    script(src='js/jquery-ui.js')
+    // loading bootstrap js
+    script(src='vendors/bootstrap/js/bootstrap.min.js')
+    script(src='vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js')
+    script(src='js/html5shiv.js')
+    script(src='js/respond.min.js')
+    script(src='vendors/metisMenu/jquery.metisMenu.js')
+    script(src='vendors/slimScroll/jquery.slimscroll.js')
+    script(src='vendors/jquery-cookie/jquery.cookie.js')
+    script(src='vendors/iCheck/icheck.min.js')
+    script(src='vendors/iCheck/custom.min.js')
+    script(src='vendors/jquery-notific8/jquery.notific8.min.js')
+    script(src='vendors/jquery-highcharts/highcharts.js')
+    script(src='js/jquery.menu.js')
+    script(src='vendors/jquery-pace/pace.min.js')
+    script(src='vendors/holder/holder.js')
+    script(src='vendors/responsive-tabs/responsive-tabs.js')
+    script(src='vendors/jquery-news-ticker/jquery.newsTicker.min.js')
+    script(src='vendors/moment/moment.js')
+    script(src='vendors/bootstrap-datepicker/js/bootstrap-datepicker.js')
+    script(src='vendors/bootstrap-daterangepicker/daterangepicker.js')
+    // CORE JAVASCRIPT
+    script(src='js/main.js')
+    // LOADING SCRIPTS FOR PAGE
+    script(src='vendors/jquery-validate/jquery.validate.min.js')
+    script(src='js/form-validation.js')
+    script(type='text/javascript').
+      (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '../../../www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-145464-14', 'auto');
+      ga('send', 'pageview');
+  // Mirrored from swlabs.co/madmin/code/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Feb 2016 03:38:26 GMT

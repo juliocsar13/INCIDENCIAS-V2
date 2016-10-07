@@ -1,0 +1,76 @@
+extends ../layout
+block modals
+
+    include create
+    include ../costumer/create
+    include create_dependence
+    include confirm
+    include view
+block content
+    #title-breadcrumb-option-demo.page-title-breadcrumb
+        .page-header.pull-left
+            .page-title INCIDENCIAS
+        ol.breadcrumb.page-breadcrumb.pull-left
+            li
+                i.fa.fa-home(style='margin-right:3px') 
+                a(href='/',style='margin-right:4px') Principal
+                i.fa.fa-angle-right(style='margin-right:4px')
+            li.active Incidencias
+            
+    .page-content.style-content
+        .panel                              
+            .panel-body
+                .form-body.pal
+                    .row
+                            
+                            button#btnModaluser.btn.btn-success(type='button',href='#registerIncidenciaModal',data-toggle='modal')
+                                i.fa.fa-plus 
+                                |  Nuevo
+                            
+                            input#userlabel(type='hidden',value=locals.userCurrent)
+                                                
+                            button#btnExportExcel.btn.btn-success.pull-right(type='button')
+                                i.fa.fa-print  
+                                |   Excel
+            
+                            .table-responsive
+                                hr
+                                table#table_incidencias.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                    thead(style='background:blue')
+                                        tr
+                                            th(width='3%') 
+                                                | #       
+                                            th Titulo
+                                            th Registrador
+                                            th Medio 
+                                            th Dependencia
+                                            th Descripcion
+                                            th Tecnico
+                                        
+                                            th(width='13%') 
+                                                | Fecha de Registro
+                                            th Estado
+                                            th
+                                                | Acciones
+                                    tbody
+                                        each incidencia in incidencias
+                                            tr
+                                                td=incidencia.id
+                                                td=incidencia.title
+                                                td=incidencia.userRegister
+                                                td=incidencia.notificacionMeans
+                                                td=incidencia.dependence
+                                                td=incidencia.description
+                                                td=incidencia.technical
+                                                td=incidencia.registration_date
+                                                td=incidencia.state
+                                                td               
+                                                    button#btnStateConfirmIncidencia.btn.btn-info.btn-xs.btn-state(type='button',href='#confirmIncidenciaModal',data-toggle='modal',data-id=incidencia.id,title="Editar ",data-placement="bottom")
+                                                        i.fa.fa-edit
+                                                            
+                                                    button#btnGetIncidencia.btn.btn-blue.btn-xs(style='margin-left:5px',type='button',href='#viewIncidenciaModal',data-id=incidencia.id,data-toggle='modal',title="Ver Detalle ",data-placement="bottom")
+                                                        i.fa.fa-eye
+block scripts
+    script(src='/javascripts/incidencia/incidencia.js')
+    script(src='/javascripts/incidencia/report_incidencia.js')
+    //script(src='/javascripts/validate-inputs/validate-incidence.js')

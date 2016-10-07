@@ -1,0 +1,46 @@
+extends ../layout
+block modals
+    include create
+    include edit
+block content
+    #title-breadcrumb-option-demo.page-title-breadcrumb
+        .page-header.pull-left
+            .page-title DEPENCENCIAS
+        ol.breadcrumb.page-breadcrumb.pull-left
+            li
+                i.fa.fa-home(style='margin-right:3px') 
+                a(href='#',style='margin-right:4px') Principal
+                i.fa.fa-angle-right(style='margin-right:4px')
+            li.active Dependencias
+            
+    .page-content.style-content
+        .panel
+            .panel-header
+            .panel-body
+                .form-body.pal
+                    .row
+                        .col-md-12
+                            button.btn.btn-success(data-target='#registerDependenceModal',data-toggle='modal')
+                                i.fa.fa-plus
+                                |  Nuevo
+                            .table-responsive
+                                hr
+                                table#table_dependence.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                    thead
+                                        th #
+                                        th Nombre
+                                        th Siglas
+                                        th Acciones
+                                    tbody
+                                        each dependence in dependences
+                                            tr
+                                                td=dependence.id
+                                                td=dependence.nameDependence
+                                                td=dependence.siglas
+                                                td
+                                                    button#btnEditDependence.btn.btn-info.btn-xs(type="button",href='#editDependenceModal',data-id=dependence.id,data-toggle='modal')
+                                                        | Editar
+block scripts
+    script(src='/javascripts/dependence/dependence.js')
+    script(src='/javascripts/dependence/acctions.js')
+    //script(src='/javascripts/validate-inputs/validate-dependence.js')

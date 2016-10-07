@@ -1,0 +1,57 @@
+extends ../layout
+block modals
+    include create
+    include edit
+block content
+    #title-breadcrumb-option-demo.page-title-breadcrumb
+        .page-header.pull-left
+            .page-title CLIENTES
+        ol.breadcrumb.page-breadcrumb.pull-left
+            li
+                i.fa.fa-home(style='margin-right:3px') 
+                a(href='/',style='margin-right:4px') Principal
+                i.fa.fa-angle-right(style='margin-right:4px')
+            li.active Clientes
+            
+    .page-content.style-content
+        .panel
+            .panel-header
+                .panel-body
+                    .form-body.pal
+                        .row
+                            .col-md-12
+                                button#btnModalcostumerPerfil.btn.btn-success(data-target='#registerCostumerModal',data-toggle='modal')
+                                    i.fa.fa-plus
+                                    |  Nuevo
+                                input#userlabelCostumer(type='hidden',value=locals.userCurrent)
+                                
+                                .table-responsive
+                                    hr
+                                    table#table_costumer.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                        thead
+                                            th #
+                                            th Nombre
+                                            th Apellido
+                                            th DNI
+                                            th Rol
+                                            th Telefono
+                                            th Email
+                                            th Fecha
+                                            th Acciones
+                                        tbody
+                                            each costumer in costumers
+                                                tr
+                                                    td=costumer.id
+                                                    td=costumer.name
+                                                    td=costumer.lastname
+                                                    td=costumer.dni
+                                                    td=costumer.role
+                                                    td=costumer.phone
+                                                    td=costumer.email
+                                                    td=costumer.register_date_person
+                                                    td
+                                                        button#btnEditCostumer.btn.btn-info.btn-xs(type='button',data-toggle='modal',href='#editCostumerModal',data-id=costumer.id)
+                                                            |Editar
+block scripts
+    script(src='/javascripts/costumer/costumer.js')
+    //script(src='/javascripts/validate-inputs/validate-client.js')

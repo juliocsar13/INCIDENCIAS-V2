@@ -1,0 +1,23 @@
+.modal.fade#registerDependenceIncidenciaModal(role="dialog")
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Registrar Dependencia
+            .modal-body
+                form#form-dependence(action='/dependencias',method='post')
+                    .row(style='padding:15px')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Nombre
+                                input#createNameDependence.form-control(type='text',name='nameDependence')
+                                
+                        .col-md-6
+                            .form-group
+                                label.control-label() Siglas
+                                input#createNameSiglas.form-control(type='text',name='siglas')
+                                    
+                        .col-md-12
+                            button#btnSubmitDependenceIncidencia.btn.btn-success.pull-right(style='margin-left:5px') Registrar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar
+        

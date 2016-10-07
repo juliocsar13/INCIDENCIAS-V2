@@ -1,0 +1,25 @@
+.modal.fade#confirmIncidenciaModal(role="dialog")
+    .modal-dialog
+        .modal-content
+            .modal-header.modal-header-primary
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title ¿ Estas seguro que quieres cambiar de estado ?
+            .modal-body
+                form(style='padding:10px')
+                    .row
+                        .col-md-8    
+                            label.control-label(type='text') Comentario/tecnico
+                            textarea#editCommentIncidencia.form-control(placeholder='comentario tecnico',rows='3',name='comment')
+                            input#editIdIncidencia.form-control(type='hidden')
+                        .col-md-4
+                            .form-group
+                                label.control-label(type='text') Estado
+                                select#editStateIncidencia.form-control(name='state',style='margin-top:5px')
+                                    option(value='pendiente') Pendiente
+                                    option(value='proceso') Proceso
+                                    option(value='atendido') Atendido    
+                             
+                        .col-md-12    
+                            hr   
+                            button#btnStateSubmitIncidencia.btn.btn-success.pull-right(type='submit',style='margin-left:5px') Aceptar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar

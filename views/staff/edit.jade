@@ -1,0 +1,77 @@
+.modal.fade#editStaffModal(role="dialog")
+    .modal-dialog.modal-wide-width
+        .modal-content
+            .modal-header
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Editar Usuario
+            .modal-body
+                form
+                    .row(style='padding:15px')
+                        .col-md-6
+                            .form-group
+                                label.control-label() DNI
+                                input#editIdStaff.form-control(type='hidden')
+                                input#editDniStaff.form-control(type='text',name='dni',maxlength="8")
+                                
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Rol
+                                select#editRoleStaff.form-control(type='text',name='role')
+                                    option(value='usuario') Usuario
+                                    option(value='tecnico') Tecnico        
+                
+                        .col-md-6
+                            .form-group
+                                label.control-label() Nombre
+                                input#editNameStaff.form-control(type='text',name='name')
+                                
+                        .col-md-6
+                            .form-group
+                                label.control-label() Apellido
+                                input#editLastnameStaff.form-control(type='text',name='lastname')
+                                
+                        .col-md-6
+                            .form-group
+                                label.control-label() Email
+                                input#editEmailStaff.form-control(type='text',name='email')
+                        
+                        .col-md-6
+                            .form-group
+                                label.control-label() Dependencia
+                                select#editDependenceStaff.select2-dependence-staff.form-control(type='text',name='dependence')
+                                    each dependence in dependences
+                                        option(value=dependence.siglas) #{dependence.nameDependence} (#{dependence.siglas})
+                                
+                        .col-md-6
+                                .form-group
+                                    label.control-label() Contraseña
+                                    input#editPasswordStaff.form-control(type='password',name='password')
+                                    
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Telefono
+                                input#editPhoneStaff.form-control(type='text',name='phone')
+                        .col-md-6    
+                            .form-group
+                                label.control-label() Estado
+                                select#editSFlatStaff.form-control(type='text',name='flat')
+                                    option(value='habilitado') Habilitado
+                                    option(value='inhabilitado') Inhabilitado    
+
+                        .col-md-3
+                            .form-group
+                                label.control-label() Registrador 
+                                input#editRecorderStaff.form-control(name='recorder', readonly="readonly")
+                
+                        .col-md-3
+                            .form-group
+                                label.control-label() Fecha registro
+                                .input-icon.right
+                                    i.fa.fa-calendar
+                                    input#editDateStaff.form-control(name='register_date_staff', readonly="readonly") 
+                                
+                        .col-md-12
+                            button#btnSaveSubmitStaff.btn.btn-success.pull-right(style='margin-left:5px')
+                                i.fa.fa-save
+                                    |  Guardar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar

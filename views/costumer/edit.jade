@@ -1,0 +1,55 @@
+.modal.fade#editCostumerModal(role="dialog")
+    .modal-dialog.modal-wide-width
+        .modal-content
+            .modal-header
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Editar Cliente
+            .modal-body
+                form
+                    .row(style='padding:15px')
+                        .col-md-6
+                            .form-group
+                                label.control-label() DNI
+                                input#editIdCostumer.form-control(type='hidden')
+                                input#editDniCostumer.form-control(type='text',name='dni',maxlength="8")
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() Rol
+                                select#editRoleCostumer.form-control(type='text',name='role')
+                                    option(value='cliente') Cliente
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() Nombre
+                                input#editNameCostumer.form-control(type='text',name='name')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Apellido
+                                input#editLastnameCostumer.form-control(type='text',name='lastname')
+                        .col-md-6
+                            .form-group
+                                label.control-label() Email
+                                input#editEmailCostumer.form-control(type='text',name='email')
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() Telefono
+                                input#editPhoneCostumer.form-control(type='text',name='phone')
+                             
+                        .col-md-6
+                            .form-group
+                                label.control-label() Registrador
+                                input#editRecorderCostumer.form-control(name='recorder', readonly="readonly")
+
+                        .col-md-6
+                            .form-group
+                                label.control-label() Fecha registro
+                                .input-icon.right
+                                    i.fa.fa-calendar
+                                    input#editDateCostumer.form-control(name='register_date_person', readonly="readonly")
+                        .col-md-12
+                            button#btnSaveCostumer.btn.btn-success.pull-right(style='margin-left:5px') 
+                                i.fa.fa-save
+                                    |  Guardar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar

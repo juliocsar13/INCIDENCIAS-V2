@@ -1,0 +1,71 @@
+extends ../layout
+block modals
+    include create
+    include confirm
+    include edit
+block content
+    #title-breadcrumb-option-demo.page-title-breadcrumb
+        .page-header.pull-left
+            .page-title USUARIOS
+        ol.breadcrumb.page-breadcrumb.pull-left
+            li
+                i.fa.fa-home(style='margin-right:3px') 
+                a(href='#',style='margin-right:4px') Principal
+                i.fa.fa-angle-right(style='margin-right:4px')
+            li.active Usuarios
+            
+    .page-content.style-content
+        .panel
+            .panel-header
+            .panel-body
+                .form-body.pal
+                    .row
+                        .col-md-12
+                            button#btnModalStaffPerfil.btn.btn-success(data-target='#registerStaffModal',data-toggle='modal')
+                                i.fa.fa-plus
+                                |  Nuevo
+                            input#labelstaff(type='hidden',value=locals.userCurrent)
+                            .table-responsive
+                                hr
+                                table#table_staff.table.table-hover.table-striped.table-bordered.table-advanced.tablesorter.display.dataTable.no-footer
+                                    thead
+                                        th(width='4%')
+                                            | #
+                                        th Nombre
+                                        th Apellido
+                                        th(width='10%') 
+                                            | DNI
+                                        th Rol
+                                        th Depencencia
+                                        th Telefono 
+                                        th(width='15%')
+                                            | Email
+                                        th(width='14%') 
+                                            | Fecha
+                                        th
+                                            | Estado
+                                        th(width='4%')
+                                            | Acciones
+                                    tbody
+                                        each user in userstaff
+                                            tr
+                                                td=user.id
+                                                td=user.name
+                                                td=user.lastname
+                                                td=user.dni
+                                                td=user.role
+                                                td=user.dependence
+                                                td=user.phone
+                                                td=user.email
+                                                td=user.register_date_staff
+                                                td            
+                                                    if(user.flat=='habilitado')
+                                                        button#btnHabiliteStaff.btn.btn-success.btn-xs.btn-state.btn-content-habilited(value=user.flat ,data-id=user.id,href='#confirmStaffModal',data-toggle='modal') 
+                                                    else
+                                                        button#btnHabiliteStaff.btn.btn-primary.btn-xs.btn-state.btn-content-inhabilited(value=user.flat ,data-id=user.id,href='#confirmStaffModal',data-toggle='modal') 
+                                                td
+                                                    button#btnStaffModal.btn.btn-info.btn-xs(type='button', data-id=user.id ,data-toggle='modal',href='#editStaffModal') 
+                                                        | Editar
+block scripts
+    script(src='/javascripts/staff/staff.js')
+    //script(src='/javascripts/validate-inputs/validate-us.js')

@@ -1,0 +1,15 @@
+.modal.fade#confirmStaffModal(role="dialog")
+    .modal-dialog
+        .modal-content
+            .modal-header.modal-header-primary
+                button.close(type='button',data-dismiss='modal') x
+                h3.modal-title Confirmar cambio de estado
+            .modal-body
+                .row
+                        .col-md-12
+                            h4 ¿ Esta seguro que quiere cambiar de estado ?
+                             
+                        .col-md-12    
+                            hr   
+                            button#btnHabilitedSubmitStaff.btn.btn-success.pull-right(style='margin-left:5px') Aceptar
+                            button.btn.btn-default.pull-right(type='button',data-dismiss='modal') Cancelar
